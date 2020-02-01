@@ -32,11 +32,9 @@ public class objectGraber : MonoBehaviour
 
         Vector3 mousePoint = Input.mousePosition;
 
-
         // z coordinate of game object on screen
 
         mousePoint.z = mZCoord;
-
 
         // Convert it to world points
 
@@ -50,11 +48,9 @@ public class objectGraber : MonoBehaviour
     {
         Vector3 ePos = transform.position - (GetMouseAsWorldPoint() + mOffset);
 
-        Debug.Log(ePos);
+        Debug.Log("ePos");
 
         transform.Translate(ePos * -0.5f);
-
-       // transform.position = GetMouseAsWorldPoint() + mOffset;
 
     }
 
