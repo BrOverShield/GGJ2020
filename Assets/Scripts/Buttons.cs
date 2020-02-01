@@ -13,9 +13,13 @@ public class Buttons : MonoBehaviour
     }
     public void b1()
     {
+<<<<<<< HEAD
 
         print("hello");
 
+=======
+        print("test");
+>>>>>>> 959c5521018cd211dfacb1c5c3786cd23ad28aba
     }
 
     public void loadNextSchematic()
