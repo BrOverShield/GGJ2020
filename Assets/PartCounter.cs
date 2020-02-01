@@ -21,6 +21,10 @@ public class PartCounter : MonoBehaviour
         {
             this.maxPart = 6;
         }
+        if (myId == 1)
+        {
+            this.maxPart = 3;
+        }
 
     }
 
