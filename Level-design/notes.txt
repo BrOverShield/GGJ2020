@@ -10,41 +10,56 @@ Menu (broken):
 		cReds
 			credits
 		a booT
-			summons a boot that kicks away all the letters except for the capitalized ones (not actually capitalized visually, this is just a representation for these notes)
+			summons a boot that kicks away all the letters except for the capitalized ones (not actually capitalized in the game, this is just a representation for these notes)
 	
 	Need to drag and drop an S T A R and T to spell out START, to click that and start the game
 	
 
+Level 1 puzzle brainstorm:
+	~~interact with environment (i.e. flip switches)~~
+	~~repair switches so that MC can flip them~~
+	assemble things out of schematics to repair game mechanics
+	move objects to reach platforms/ledges
+	~~repair 2D cart to carry something somewhere~~
+	
+	
 Level 1: purely 2D
 	At this point, essentially everything is broken:
 		bad sound
-		bad lighting?
-			wireframe view, no colour, etc.
+		bad lighting
+			wireframe view, no colour
 		can't jump
-		can't grab objects
 		no gravity for MC / bosses / objects
 		
 	area to right is blocked off by what seems to be a wall, so can only go left
 	
-	go left, repair sound and/or lighting
-		depending on how these are restored, MAY NEED ABILITY TO GRAB BLOCKS/OBJECTS FIRST!
-			just have to hit button to get lighting?
-			have to pick up button and put it in place to get sound?
+	go left, repair wireframe view
+		get this automatically? Might be hard to figure out what to do, when seeing everything as wireframes
 	
 	"stairwell" section - map drops down a level, and there's also an overhanging upper level to jump to (except MC can't jump right now!)
-		gravity is broken, so MC maintains same height and just keeps walking left in mid-air
-			repair gravity - MC falls to ground below and can't go right because there are ledges and they still can't jump
+		gravity is broken, so MC maintains same height and keeps walking left in mid-air
+			repair gravity - MC falls into pit below
+			
+		there's a broken ladder in the pit - need to grab the two pieces and place them against the wall
 		
-		keep going left, repair jumping
+		climb up left side of pit:
+			repair jumping
+				use the boot again here?
+			
+		can't go further left (wall); go back right, jump into pit, move ladder, climb up right side
 		
-		need a wall to prevent going further left
+		repair sound
+			3D walkman schematic
 		
-		jump back up the stairwell to starting height, then jump up and left
+		jump back up the stairwell to starting height, then jump up and left onto the overhanging upper level
 	
 	some classic platforming/jumping
-		level collapsing a bit, and need to repair it?
+		level collapsing, and need to repair it?
 	
 	repair first axis and unlock 2.5D mode
+	
+	have colour mechanic hidden behind fake wall up here, visible from where 2.5D mode was unlocked?
+		walked right past it in 2D mode because it looked like part of the background
 	
 	return back to starting area
 		make it obvious to go back here, so players don't just get lost!
@@ -56,6 +71,7 @@ Level 1 boss:
 	
 	FIGURE OUT BOSS MECHANICS!
 		should involve rotating planes, possibly activating/moving lasers on both planes to corner/kill the boss?
+		or assemble a cart and push it to knock the boss over, which knocks it out
 	
 	after boss fight, teleporting to space no longer makes sense if we want to use the environment/gravity to kill the last boss
 		build(/repair) bridge out of boss parts to next area? 
@@ -63,3 +79,4 @@ Level 1 boss:
 	
 Level 2: 2.5 D
 	use similar puzzle mechanics from level 1, but add in plane-rotation as a requirement to solve all puzzles
+	
