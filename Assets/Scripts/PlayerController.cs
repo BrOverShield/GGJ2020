@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKeyDown("r")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        }
+
         if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && RotateAxisUnlocked && !Rotating_q && !Rotating_e) {
             InitialAngle = (int)transform.eulerAngles.y;
             CurrentAngle = InitialAngle;
