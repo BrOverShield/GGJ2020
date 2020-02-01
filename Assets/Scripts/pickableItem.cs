@@ -35,7 +35,7 @@ public class pickableItem : MonoBehaviour
 
         if (collidedObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             feats.unlockFeature(featureToUnlock); 
 
             //if (gm == null)
