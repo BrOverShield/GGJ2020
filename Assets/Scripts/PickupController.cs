@@ -20,8 +20,8 @@ public class PickupController : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("GravityArtefact"))
         {
-            GetComponent<Rigidbody>().useGravity = true;
             Destroy(obj.gameObject);
+            GetComponent<Rigidbody>().useGravity = true;
         }
         if (obj.gameObject.CompareTag("WireframeArtefact"))
         {
