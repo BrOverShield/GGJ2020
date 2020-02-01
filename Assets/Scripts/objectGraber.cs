@@ -48,7 +48,7 @@ public class objectGraber : MonoBehaviour
     {
         Vector3 ePos = transform.position - (GetMouseAsWorldPoint() + mOffset);
 
-        Debug.Log("ePos");
+        //Debug.Log("ePos");
 
         transform.Translate(ePos * -0.5f);
 

@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class pickableItem : MonoBehaviour
 {
-
-    //public GeneratorMap gm;
-    //public ItemTypes thisItemType;
+    
     public GameObject pickupAnim;
+    public features feats;
+
+    public features.unlockableFeatures featureToUnlock; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        feats = FindObjectOfType<features>();
     }
 
     // Update is called once per frame
   
-    public virtual void thisItemEffect(GameObject player)
-    {
-        Debug.Log("unknown item picked");
-    }
     private void Update()
     {
-        //if (gm == null)
-        //{
-        //    gm = FindObjectOfType<GeneratorMap>();
-        //}
+        if (feats == null)
+        {
+            feats = FindObjectOfType<features>();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-
         
         GameObject collidedObject = collision.collider.gameObject;
 
@@ -40,7 +36,8 @@ public class pickableItem : MonoBehaviour
         if (collidedObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            thisItemEffect(collidedObject);
+            feats.unlockFeature(featureToUnlock); 
+
             //if (gm == null)
             //{
             //    gm = FindObjectOfType<GeneratorMap>();
@@ -49,30 +46,6 @@ public class pickableItem : MonoBehaviour
             //AudioManager.Instance.ItemPickup.Play(transform.position);
             Instantiate(pickupAnim, this.transform.position, Quaternion.identity);
         }
-
     }
-
-    // private void OnTriggerEnter(Collider col)
-    //{
-    //    GameObject collidedObject = col.gameObject;
-
-
-
-    //    if (collidedObject.tag == "Player")
-    //    {
-    //        Destroy(this.gameObject);
-    //        thisItemEffect(collidedObject);
-    //        //if (gm == null)
-    //        //{
-    //        //    gm = FindObjectOfType<GeneratorMap>();
-    //        //    print("wuuuuuuuuut");
-    //        //}
-    //        //AudioManager.Instance.ItemPickup.Play(transform.position);
-    //        Instantiate(pickupAnim, this.transform.position, Quaternion.identity);
-    //    }
-    //}
-
-
-
 
 }
