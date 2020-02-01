@@ -10,13 +10,16 @@ public class bluePrints : MonoBehaviour
         Walkman
     }
 
-    public  List<bluePrintsEnum> ownedBluePrints = new List<bluePrintsEnum>(); 
+    public  List<bluePrintsEnum> ownedBluePrints = new List<bluePrintsEnum>();
 
     public void addBluePrint(bluePrintsEnum bluePrintToAdd)
     {
-        ownedBluePrints.Add(bluePrintToAdd);
-    }
 
+        if (!ownedBluePrints.Contains(bluePrintToAdd))
+        {
+            ownedBluePrints.Add(bluePrintToAdd);
+        }
+    }
     public bool checkIfBluePrintOwned(bluePrintsEnum bluePrint)
     {
         return ownedBluePrints.Contains(bluePrint);
