@@ -73,9 +73,7 @@ public class PlayerController : MonoBehaviour
         } else {
             rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);   
         }
-        print(rb.velocity.y);
         if (Input.GetKeyDown("space")) {
-            print("yeah");
             rb.AddForce(Vector3.up * JumpThrust);
         }
     }
