@@ -51,8 +51,11 @@ public class PlayerController : MonoBehaviour
         print(rb.velocity.y);
         if (Input.GetKeyDown("space"))
         {
-            print("yeah");
-            rb.AddForce(Vector3.up * JumpThrust);
+            if (Input.GetKeyDown("space"))
+            {
+                rb.AddForce(Vector3.up * JumpThrust);
+            }
+            
         }
     }
 }
