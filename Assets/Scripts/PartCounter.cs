@@ -11,6 +11,8 @@ public class PartCounter : MonoBehaviour
     [SerializeField]
     public bluePrints bp;
     int maxPart=0;
+    bool ISConstructefd = false;
+
     void Start()
     {
        if(myId==0)
@@ -21,7 +23,7 @@ public class PartCounter : MonoBehaviour
         {
             this.maxPart = 6;
         }
-        if (myId == 1)
+        if (myId == 2)
         {
             this.maxPart = 3;
         }
@@ -38,7 +40,15 @@ public class PartCounter : MonoBehaviour
     }
     void HasAllPArts()
     {
-        Instantiate(FinalProductPrefab, this.transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        if(ISConstructefd==false)
+        {
+            Instantiate(FinalProductPrefab, this.transform.position, Quaternion.identity);
+            ISConstructefd = true;
+            for (int i = 0; i < this.transform.childCount; i++)//ANAKIN
+            {
+                Destroy(this.transform.GetChild(i));
+            }
+        }
+       
     }
 }
