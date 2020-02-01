@@ -11,17 +11,18 @@ public class PickupController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        print("YES");
-        if (collision.gameObject.CompareTag("GravityArtefact"))
-        {
-            print("INSIDE");
-        }
-    }
-
     void Update()
     {
+        
+    }
+
+    void OnTriggerEnter(Collider obj)
+    {
+        if (obj.gameObject.CompareTag("GravityArtefact"))
+        {
+            Destroy(obj.gameObject);
+            GetComponent<Rigidbody>().useGravity = true;
+        }
         
     }
 }
