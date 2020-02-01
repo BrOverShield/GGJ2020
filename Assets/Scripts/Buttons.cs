@@ -12,7 +12,7 @@ public class Buttons : MonoBehaviour
     }
     public void b1()
     {
-        
+        print("test");
     }
        
 }
