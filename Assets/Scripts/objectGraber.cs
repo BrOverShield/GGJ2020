@@ -46,11 +46,11 @@ public class objectGraber : MonoBehaviour
     void OnMouseDrag()
 
     {
-        Vector3 ePos = transform.position - (GetMouseAsWorldPoint() + mOffset);
+        Vector3 ePos = (GetMouseAsWorldPoint() + mOffset) -transform.position;
 
         //Debug.Log("ePos");
 
-        transform.Translate(ePos * -0.5f);
+        GetComponent<Rigidbody>().velocity = ePos * 10;
 
     }
 
