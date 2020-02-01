@@ -531,6 +531,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: WireframeArtefact
       objectReference: {fileID: 0}
+    - target: {fileID: 4292687606759188740, guid: 25dc0fa366608a6469281452a5efc039,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4292687606759188741, guid: 25dc0fa366608a6469281452a5efc039,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -605,8 +610,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.85627365}
+  m_Center: {x: 0, y: 0, z: 0.18678488}
 --- !u!1 &733942570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1157,6 @@ GameObject:
   - component: {fileID: 2113499198}
   - component: {fileID: 2113499197}
   - component: {fileID: 2113499195}
-  - component: {fileID: 2113499199}
   - component: {fileID: 2113499201}
   - component: {fileID: 2113499200}
   - component: {fileID: 2113499202}
@@ -1257,18 +1261,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113499193}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2113499199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113499193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90cf15929282a9849ab5639028665925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2113499200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,7 +1285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0f3e952079ed846b2f804315c041e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  MovementSpeed: 10
+  RotationSpeed: 75
   thrust: 1
   JumpThrust: 300
   rb: {fileID: 0}
