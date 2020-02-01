@@ -7,10 +7,17 @@ public class bluePrints : MonoBehaviour
 
     public enum bluePrintsEnum
     {
-        Walkman
+        Walkman,
+        Ladder,
+        Cart
     }
 
-    public  List<bluePrintsEnum> ownedBluePrints = new List<bluePrintsEnum>();
+    public  List<bluePrintsEnum> ownedBluePrints;
+
+    public void Awake()
+    {
+        ownedBluePrints = new List<bluePrintsEnum>();
+    }
 
     public void addBluePrint(bluePrintsEnum bluePrintToAdd)
     {
@@ -23,6 +30,11 @@ public class bluePrints : MonoBehaviour
     public bool checkIfBluePrintOwned(bluePrintsEnum bluePrint)
     {
         return ownedBluePrints.Contains(bluePrint);
+    }
+
+    public int getBpCount()
+    {
+        return ownedBluePrints.Count;
     }
 
 }
