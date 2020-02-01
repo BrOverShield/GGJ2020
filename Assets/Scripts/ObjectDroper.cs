@@ -14,7 +14,7 @@ public class ObjectDroper : MonoBehaviour
     {
         if(schematicView.activeSelf==true)
         {
-            if (Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(DropPoint.transform.position.x, DropPoint.transform.position.y)) <= 10)
+            if (Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(DropPoint.transform.position.x, DropPoint.transform.position.y)) <= 2)
             {
                 //DropPoint.color = Color.green;
                 this.transform.position = DropPoint.position;
