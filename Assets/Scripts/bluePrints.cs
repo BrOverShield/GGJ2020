@@ -14,7 +14,12 @@ public class bluePrints : MonoBehaviour
 
     public void addBluePrint(bluePrintsEnum bluePrintToAdd)
     {
-        Debug.Log("blueprintadded"); 
         ownedBluePrints.Add(bluePrintToAdd);
     }
+
+    public bool checkIfBluePrintOwned(bluePrintsEnum bluePrint)
+    {
+        return ownedBluePrints.Contains(bluePrint);
+    }
+
 }

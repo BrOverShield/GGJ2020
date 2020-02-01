@@ -25,7 +25,6 @@ public class pickableBluePrint : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collidedObject = collision.collider.gameObject;

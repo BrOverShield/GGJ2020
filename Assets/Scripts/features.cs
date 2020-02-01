@@ -23,4 +23,11 @@ public class features : MonoBehaviour
         Debug.Log("feature unlocked");
     }
 
+    public bool checkIfFeatureUnlocked(unlockableFeatures feature)
+    {
+
+        return unlockedFeatures.Contains(feature); 
+        
+    }
+
 }
