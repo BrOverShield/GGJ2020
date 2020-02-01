@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float Speed;
+    public bool RotateAxisUnlocked;
     // Start is called before the first frame update
     void Start() {
         
@@ -20,11 +21,11 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e"))) {
-            if (Input.GetKey("q")) {
-                transform.Rotate(0, 1, 0);
-            } else if (Input.GetKey("e")) {
-                transform.Rotate(0, -1, 0);
+        if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && RotateAxisUnlocked) {
+            if (Input.GetKeyDown("q")) {
+                transform.Rotate(0, 90, 0);
+            } else if (Input.GetKeyDown("e")) {
+                transform.Rotate(0, -90, 0);
             }
         }
     }
