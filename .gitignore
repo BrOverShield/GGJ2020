@@ -61,4 +61,4 @@ crashlytics-build.properties
 
 
 # custor ignores start here
-*.meta
+#*.meta
