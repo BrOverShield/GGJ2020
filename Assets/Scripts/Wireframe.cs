@@ -9,12 +9,12 @@ public class Wireframe : MonoBehaviour
     //    Invoke("disable",3f);
     //}
     
-    void enable()
+    public void enable()
     {
         enabled = true;
     }
     
-        void disable()
+    public void disable()
     {
         enabled = false;
     }

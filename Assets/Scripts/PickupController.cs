@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
-
+    public Camera TheCamera;
 
     void Start()
     {
@@ -22,6 +22,11 @@ public class PickupController : MonoBehaviour
         {
             Destroy(obj.gameObject);
             GetComponent<Rigidbody>().useGravity = true;
+        }
+        if (obj.gameObject.CompareTag("WireframeArtefact"))
+        {
+            TheCamera.GetComponent<Wireframe>().disable();
+            Destroy(obj.gameObject);
         }
         
     }

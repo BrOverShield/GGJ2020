@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private int InitialAngle = 0;
     private float CurrentAngle;
     private int FinishAngle;
+    private float Timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,15 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKey("r")) {
+            Timer += Time.deltaTime;
+            if (Timer > 3) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            }
+        } else {
+            Timer = 0;
+        }
+
         if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && RotateAxisUnlocked && !Rotating_q && !Rotating_e) {
             InitialAngle = (int)transform.eulerAngles.y;
             CurrentAngle = InitialAngle;
@@ -73,9 +85,7 @@ public class PlayerController : MonoBehaviour
         } else {
             rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);   
         }
-        print(rb.velocity.y);
         if (Input.GetKeyDown("space")) {
-            print("yeah");
             rb.AddForce(Vector3.up * JumpThrust);
         }
     }
