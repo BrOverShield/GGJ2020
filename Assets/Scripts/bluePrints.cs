@@ -7,10 +7,17 @@ public class bluePrints : MonoBehaviour
 
     public enum bluePrintsEnum
     {
-        Walkman
+        Walkman,
+        Ladder,
+        Cart
     }
 
-    public  List<bluePrintsEnum> ownedBluePrints = new List<bluePrintsEnum>();
+    public  List<bluePrintsEnum> ownedBluePrints;
+
+    public void Awake()
+    {
+        ownedBluePrints = new List<bluePrintsEnum>();
+    }
 
     public void addBluePrint(bluePrintsEnum bluePrintToAdd)
     {

@@ -138,6 +138,16 @@ PrefabInstance:
       propertyPath: DropPoint
       value: 
       objectReference: {fileID: 1544732936}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714021285436564484, guid: e5dde8d0d06afe9458d48b5349f8d37b,
         type: 3}
       propertyPath: m_Size.x
@@ -496,6 +506,16 @@ PrefabInstance:
       propertyPath: DropPoint
       value: 
       objectReference: {fileID: 1728094635}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714021285436564484, guid: e5dde8d0d06afe9458d48b5349f8d37b,
         type: 3}
       propertyPath: m_Size.x
@@ -1724,6 +1744,16 @@ PrefabInstance:
       propertyPath: DropPoint
       value: 
       objectReference: {fileID: 886146305}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714021285436564484, guid: e5dde8d0d06afe9458d48b5349f8d37b,
         type: 3}
       propertyPath: m_Size.x
@@ -2001,6 +2031,16 @@ PrefabInstance:
       propertyPath: DropPoint
       value: 
       objectReference: {fileID: 275231512}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714021285436564484, guid: e5dde8d0d06afe9458d48b5349f8d37b,
         type: 3}
       propertyPath: m_Size.x
@@ -2331,6 +2371,16 @@ PrefabInstance:
       propertyPath: DropPoint
       value: 
       objectReference: {fileID: 1724104191}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714021285436564481, guid: e5dde8d0d06afe9458d48b5349f8d37b,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714021285436564484, guid: e5dde8d0d06afe9458d48b5349f8d37b,
         type: 3}
       propertyPath: m_Size.x
