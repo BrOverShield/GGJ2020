@@ -29,8 +29,11 @@ public class pickableBluePrint : MonoBehaviour
     {
         GameObject collidedObject = collision.collider.gameObject;
 
+        print("IHAVeJUStCollide");
+
         if (collidedObject.tag == "Player")
         {
+            
             Destroy(this.gameObject);
             bp.addBluePrint(thisBluePrint);
 
@@ -43,5 +46,5 @@ public class pickableBluePrint : MonoBehaviour
             Instantiate(pickupAnim, this.transform.position, Quaternion.identity);
         }
     }
-
+   
 }
