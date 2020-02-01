@@ -32,4 +32,9 @@ public class bluePrints : MonoBehaviour
         return ownedBluePrints.Contains(bluePrint);
     }
 
+    public int getBpCount()
+    {
+        return ownedBluePrints.Count;
+    }
+
 }

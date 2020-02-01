@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class features : MonoBehaviour
 {
+
+    public Camera TheCamera;
+    public GameObject Character;
     public enum unlockableFeatures
     {
         wireframe,
@@ -12,7 +15,8 @@ public class features : MonoBehaviour
         twoPointFivey,
         twoPointFivex,
         twoPointFivez,
-        Threed
+        Threed,
+        Gravity
     }
 
 
@@ -36,6 +40,22 @@ public class features : MonoBehaviour
     public bool checkIfFeatureUnlocked(unlockableFeatures feature)
     {
         return unlockedFeatures.Contains(feature); 
+    }
+
+    void Update()
+    {
+        if (TheCamera.GetComponent<Wireframe>().enabled)
+        {
+            if (unlockedFeatures.Contains(unlockableFeatures.wireframe))
+            {
+                TheCamera.GetComponent<Wireframe>().Fixed = true;
+            }
+        }
+
+        if (unlockedFeatures.Contains(unlockableFeatures.Gravity))
+        {
+            Character.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 
 }

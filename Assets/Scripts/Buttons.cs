@@ -11,15 +11,14 @@ public class Buttons : MonoBehaviour
     {
         bp = FindObjectOfType<bluePrints>();
     }
+
     public void b1()
     {
-
-        print("hello");
-
 
         print("test");
 
     }
+
 
     public void loadNextSchematic()
     {
