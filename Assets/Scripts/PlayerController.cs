@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && RotateAxisUnlocked) {
             if (Input.GetKeyDown("q")) {
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour
                 transform.Rotate(0, -90, 0);
             }
         }
+        
+
+
     }
 
     void FixedUpdate()
@@ -40,8 +44,12 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector3.left * thrust);
             }
         }
+        else
+        {
+            rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);   
+        }
         print(rb.velocity.y);
-        if (Input.GetKeyDown("space") && Mathf.Abs(rb.velocity.y) < 0.5f)
+        if (Input.GetKeyDown("space"))
         {
             print("yeah");
             rb.AddForce(Vector3.up * JumpThrust);
