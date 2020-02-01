@@ -5,21 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Speed;
+    public float thrust = 1.0f;
+
+    public float JumpThrust = 10.0f;
+    public Rigidbody rb;
+
     public bool RotateAxisUnlocked;
     // Start is called before the first frame update
-    void Start() {
-        
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update() {
-        if (!(Input.GetKeyDown("d") && Input.GetKeyDown("a"))) {
-            if (Input.GetKey("d")) {
-                transform.Translate(Vector3.right * Speed * Time.deltaTime);
-            } else if (Input.GetKey("a")) {
-                transform.Translate(Vector3.left * Speed * Time.deltaTime);
-            }
-        }
+    void Update()
+    {
 
         if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && RotateAxisUnlocked) {
             if (Input.GetKeyDown("q")) {
@@ -27,6 +27,32 @@ public class PlayerController : MonoBehaviour
             } else if (Input.GetKeyDown("e")) {
                 transform.Rotate(0, -90, 0);
             }
+        }
+        
+
+
+    }
+
+    void FixedUpdate()
+    {
+        if (!(Input.GetKeyDown("d") && Input.GetKeyDown("a"))) {
+            if (Input.GetKey("d")) {
+                transform.Translate(Vector3.right * Speed * Time.deltaTime);
+                rb.AddForce(Vector3.right * thrust);
+            } else if (Input.GetKey("a")) {
+                transform.Translate(Vector3.left * Speed * Time.deltaTime);
+                rb.AddForce(Vector3.left * thrust);
+            }
+        }
+        else
+        {
+            rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);   
+        }
+        print(rb.velocity.y);
+        if (Input.GetKeyDown("space"))
+        {
+            print("yeah");
+            rb.AddForce(Vector3.up * JumpThrust);
         }
     }
 }
