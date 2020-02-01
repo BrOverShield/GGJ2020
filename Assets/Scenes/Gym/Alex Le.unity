@@ -759,8 +759,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9188104, y: 2.5488014, z: 0.50640184}
-  m_Center: {x: 0.024178743, y: 1.161602, z: -0.05336541}
+  m_Size: {x: 6.123512, y: 7.5414333, z: 0.50640184}
+  m_Center: {x: -0.0095078945, y: 3.657918, z: -0.05336541}
 --- !u!1 &1012489800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 2113499200}
   - component: {fileID: 2113499202}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1070,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &2113499196
 BoxCollider:
@@ -1165,13 +1165,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2113499193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3aac5d30fbc23478715212b6bc434c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c0f3e952079ed846b2f804315c041e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
   thrust: 1
-  JumpThrust: 1000
+  JumpThrust: 400
   rb: {fileID: 0}
+  RotateAxisUnlocked: 0
 --- !u!65 &2113499202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1183,8 +1184,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.4826862, y: 1.2646704, z: 1}
+  m_Center: {x: -0.03280648, y: 0.024929985, z: 0}
 --- !u!1001 &4292687605908232296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,6 +1301,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148193372043534923, guid: 3c922f0ea10cf3840b112dcf5d3d33e2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148193372043534923, guid: 3c922f0ea10cf3840b112dcf5d3d33e2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148193372043534923, guid: 3c922f0ea10cf3840b112dcf5d3d33e2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2237790265042813835, guid: 3c922f0ea10cf3840b112dcf5d3d33e2,
         type: 3}
