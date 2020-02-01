@@ -44,9 +44,9 @@ public class PartCounter : MonoBehaviour
         {
             Instantiate(FinalProductPrefab, this.transform.position, Quaternion.identity);
             ISConstructefd = true;
-            for (int i = 0; i < this.transform.childCount; i++)//ANAKIN
+            for (int i = 1; i < this.transform.childCount; i++)//ANAKIN
             {
-                Destroy(this.transform.GetChild(i));
+                Destroy(this.transform.GetChild(i).gameObject);
             }
         }
        
