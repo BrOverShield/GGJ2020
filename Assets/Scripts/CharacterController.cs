@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    public float Speed;
     // Start is called before the first frame update
     void Start() {
         
@@ -13,9 +14,9 @@ public class CharacterController : MonoBehaviour
     void Update() {
         if (!(Input.GetKeyDown("d") && Input.GetKeyDown("a"))) {
             if (Input.GetKey("d")) {
-                transform.Translate(Vector3.right * Time.deltaTime);
+                transform.Translate(Vector3.right * Speed * Time.deltaTime);
             } else if (Input.GetKey("a")) {
-                transform.Translate(Vector3.left * Time.deltaTime);
+                transform.Translate(Vector3.left * Speed * Time.deltaTime);
             }
         }
 
