@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class objectGraber : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("start");
-    }
-
     private Vector3 mOffset;
+
 
     private float mZCoord;
 
 
-    private void OnMouseDown()
+    void OnMouseDown()
+
     {
-        Debug.Log("mouse down!");
-        // mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+
+        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+
+        // Store offset = gameobject world pos - mouse world pos
 
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
-        Debug.Log(mOffset);
+
     }
 
 
@@ -33,26 +32,30 @@ public class objectGraber : MonoBehaviour
 
         Vector3 mousePoint = Input.mousePosition;
 
-        mousePoint.z = this.gameObject.transform.position.z; 
 
+        // z coordinate of game object on screen
+
+        mousePoint.z = mZCoord;
+
+
+        // Convert it to world points
 
         return Camera.main.ScreenToWorldPoint(mousePoint);
 
     }
 
+
     void OnMouseDrag()
+
     {
-        // Debug.Log("dragging");
+        Vector3 ePos = transform.position - (GetMouseAsWorldPoint() + mOffset);
 
-        this.gameObject.transform.position = GetMouseAsWorldPoint() + mOffset;
+        Debug.Log(ePos);
 
-        //Debug.Log(Input.mousePosition);
+        transform.Translate(ePos * -0.5f);
+
+       // transform.position = GetMouseAsWorldPoint() + mOffset;
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
 }
