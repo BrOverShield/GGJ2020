@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     public float JumpThrust = 10.0f;
     public Rigidbody rb;
+
+    public bool RotateAxisUnlocked;
     // Start is called before the first frame update
     void Start()
     {
