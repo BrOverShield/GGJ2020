@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private float CurrentAngle;
     private int FinishAngle;
     private float Timer = 0;
+    private features Feats;
+    public features.unlockableFeatures twoPointFivey;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,8 @@ public class PlayerController : MonoBehaviour
             Timer = 0;
         }
 
-        if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && RotateAxisUnlocked && !Rotating_q && !Rotating_e) {
+        Feats = FindObjectOfType<features>();
+        if (!(Input.GetKeyDown("q") && Input.GetKeyDown("e")) && Feats.checkIfFeatureUnlocked(twoPointFivey) && !Rotating_q && !Rotating_e) {
             InitialAngle = (int)transform.eulerAngles.y;
             CurrentAngle = InitialAngle;
             if (Input.GetKeyDown("q")) {
