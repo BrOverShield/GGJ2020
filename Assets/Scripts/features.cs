@@ -19,15 +19,16 @@ public class features : MonoBehaviour
 
     public void unlockFeature(unlockableFeatures featToUnlock)
     {
-        unlockedFeatures.Add(featToUnlock);
-        Debug.Log("feature unlocked");
+        if (!unlockedFeatures.Contains(featToUnlock))
+        {
+            unlockedFeatures.Add(featToUnlock);
+           // Debug.Log("feature unlocked");
+        }
     }
 
     public bool checkIfFeatureUnlocked(unlockableFeatures feature)
     {
-
         return unlockedFeatures.Contains(feature); 
-        
     }
 
 }
