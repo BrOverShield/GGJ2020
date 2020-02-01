@@ -15,7 +15,14 @@ public class features : MonoBehaviour
         Threed
     }
 
-    public List<unlockableFeatures> unlockedFeatures = new List<unlockableFeatures>();
+
+
+    public List<unlockableFeatures> unlockedFeatures;
+
+    public void Awake()
+    {
+        unlockedFeatures = new List<unlockableFeatures>();
+    }
 
     public void unlockFeature(unlockableFeatures featToUnlock)
     {

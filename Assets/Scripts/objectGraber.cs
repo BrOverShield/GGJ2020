@@ -9,7 +9,12 @@ public class objectGraber : MonoBehaviour
 
 
     private float mZCoord;
+    public bool isBook = false;
 
+    
+    void Start() {
+        GetComponent<Rigidbody>().maxDepenetrationVelocity = 5f;
+    }
 
     void OnMouseDown()
 
@@ -21,6 +26,17 @@ public class objectGraber : MonoBehaviour
 
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
 
+        if(isBook) {
+            gameObject.layer = 10;
+        }
+    }
+    
+    void OnMouseUp()
+    {
+        if(isBook) {
+            gameObject.layer = 1;
+        }
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
 
