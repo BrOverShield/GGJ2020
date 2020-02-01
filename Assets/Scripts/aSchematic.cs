@@ -6,7 +6,9 @@ public class aSchematic : MonoBehaviour
 {
 
     public int myParts = 0;
-    public int maxParts = 0; 
+    public int maxParts = 0;
+
+    public bluePrints bp; 
 
     [SerializeField]
     public bluePrints.bluePrintsEnum thisBluePrint;
@@ -31,5 +33,7 @@ public class aSchematic : MonoBehaviour
     void Update()
     {
         
+       
+
     }
 }
