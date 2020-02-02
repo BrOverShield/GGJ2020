@@ -2357,6 +2357,10 @@ PrefabInstance:
       propertyPath: RightImage
       value: 
       objectReference: {fileID: 502625725}
+    - target: {fileID: 578789970, guid: 5e2f48bee7f3294459cc3a7d3b43f6e8, type: 3}
+      propertyPath: JumpTutorial
+      value: 
+      objectReference: {fileID: 1121588545}
     - target: {fileID: 6559146714263381899, guid: 5e2f48bee7f3294459cc3a7d3b43f6e8,
         type: 3}
       propertyPath: m_Name
