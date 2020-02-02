@@ -16,7 +16,8 @@ public class features : MonoBehaviour
         twoPointFivex,
         twoPointFivez,
         Threed,
-        Gravity
+        Gravity,
+        Jump
     }
 
 
