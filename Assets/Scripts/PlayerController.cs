@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGoingLeft;
 
+    public MusicManager musicManager;
+    public SoundManager soundManager;
+
     public ChangeSpriteDirection SpriteDirectionController;
 
     // Start is called before the first frame update
@@ -65,12 +68,14 @@ public class PlayerController : MonoBehaviour
             CurrentAngle = InitialAngle;
             if (Input.GetKeyDown("q")) {
                 Rotating_q = true;
+                soundManager.PlayViewShift();
                 FinishAngle = InitialAngle + 90;
                 if (FinishAngle >= 360) {
                     FinishAngle -= 360;
                 }
             } else if (Input.GetKeyDown("e")) {
                 Rotating_e = true;
+                soundManager.PlayViewShift();
                 FinishAngle = InitialAngle - 90;
                 if (FinishAngle < 0) {
                     FinishAngle += 360;
@@ -101,12 +106,20 @@ public class PlayerController : MonoBehaviour
                 SpriteDirectionController.GoingRight();
                 transform.Translate(Vector3.right * MovementSpeed * Time.deltaTime);
                 rb.AddForce(Vector3.right * thrust);
+                musicManager.IsMoving = true;
             } else if (Input.GetKey("a")) {
                 SpriteDirectionController.GoingLeft();
                 transform.Translate(Vector3.left * MovementSpeed * Time.deltaTime);
                 rb.AddForce(Vector3.left * thrust);
+                musicManager.IsMoving = true;
             }
+            else
+            {
+                musicManager.IsMoving = false;
+            }
+            
         } else {
+            musicManager.IsMoving = false;
             rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);   
         }
         if (Input.GetKeyDown("space"))
@@ -114,6 +127,7 @@ public class PlayerController : MonoBehaviour
             if (CanJump)
             {
                 rb.AddForce(Vector3.up * JumpThrust);
+                soundManager.PlayJump();
             }
         }
     }

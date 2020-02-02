@@ -8,6 +8,8 @@ public class pickableItem : MonoBehaviour
     public GameObject pickupAnim;
     public features feats;
 
+    public SoundManager soundManager;
+
     public features.unlockableFeatures featureToUnlock; 
 
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class pickableItem : MonoBehaviour
 
         if (collidedObject.tag == "Player")
         {
+            soundManager.PlaySparkles();
             Destroy(gameObject);
             feats.unlockFeature(featureToUnlock); 
 
