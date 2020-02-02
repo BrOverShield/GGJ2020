@@ -18,6 +18,7 @@ public class Wireframe : MonoBehaviour
     public void enable()
     {
         Fixed = true;
+        activated = false;
     }
     
     public void disable()
@@ -46,22 +47,24 @@ public class Wireframe : MonoBehaviour
     {
         if (!Fixed)
         {
-            if (activated)
+            time += Time.deltaTime;
+            if (time > randomTime)
             {
-                disable();
-            }
-            else
-            {
-                time += Time.deltaTime;
-                if (time > randomTime)
+                if (activated)
                 {
-                    time = 0;
-                    randomTime = Random.value * MaxTime;
-                    enable();
+                    activated = false;
                 }
+                else
+                {
+                    activated = true;
+                }
+                time = 0;
+                randomTime = Random.value * MaxTime;
             }
-            
         }
-        
+        else
+        {
+            activated = false;
+        }  
     }
 } 

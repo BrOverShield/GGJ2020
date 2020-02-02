@@ -7,6 +7,10 @@ public class features : MonoBehaviour
 
     public Camera TheCamera;
     public GameObject Character;
+    public GameObject RightImage;
+
+    public Sprite NewImage1Jump;
+    public Sprite NewImage2Jump;
     public enum unlockableFeatures
     {
         wireframe,
@@ -56,6 +60,19 @@ public class features : MonoBehaviour
         if (unlockedFeatures.Contains(unlockableFeatures.Gravity))
         {
             Character.GetComponent<Rigidbody>().useGravity = true;
+        }
+
+        if (unlockedFeatures.Contains(unlockableFeatures.Jump))
+        {
+            RightImage.GetComponent<AnimateKey>().image1 = NewImage1Jump;
+            RightImage.GetComponent<AnimateKey>().image2 = NewImage2Jump;
+            RightImage.SetActive(true);
+            Character.GetComponent<PlayerController>().CanJump = true;
+        }
+
+        if (unlockedFeatures.Contains(unlockableFeatures.twoPointFivey))
+        {
+            Character.GetComponent<PlayerController>().RotateAxisUnlocked = true;
         }
     }
 
