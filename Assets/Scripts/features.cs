@@ -11,6 +11,9 @@ public class features : MonoBehaviour
 
     public Sprite NewImage1Jump;
     public Sprite NewImage2Jump;
+    public RemoveJumpTutorial JumpTutorial;
+
+    public bool fait;
     public enum unlockableFeatures
     {
         wireframe,
@@ -47,6 +50,11 @@ public class features : MonoBehaviour
         return unlockedFeatures.Contains(feature); 
     }
 
+    void Start()
+    {
+        fait = false;
+    }
+
     void Update()
     {
         if (TheCamera.GetComponent<Wireframe>().enabled)
@@ -64,10 +72,15 @@ public class features : MonoBehaviour
 
         if (unlockedFeatures.Contains(unlockableFeatures.Jump))
         {
-            RightImage.GetComponent<AnimateKey>().image1 = NewImage1Jump;
-            RightImage.GetComponent<AnimateKey>().image2 = NewImage2Jump;
-            RightImage.SetActive(true);
+            if (!fait)
+            {
+                RightImage.GetComponent<AnimateKey>().image1 = NewImage1Jump;
+                RightImage.GetComponent<AnimateKey>().image2 = NewImage2Jump;
+                RightImage.SetActive(true);
+            }
+            fait = true;
             Character.GetComponent<PlayerController>().CanJump = true;
+            JumpTutorial.RelevantNow();
         }
 
         if (unlockedFeatures.Contains(unlockableFeatures.twoPointFivey))
