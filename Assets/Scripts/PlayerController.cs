@@ -23,15 +23,20 @@ public class PlayerController : MonoBehaviour
     private features Feats;
     public features.unlockableFeatures twoPointFivey;
 
+    public bool CanJump;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        CanJump = false;
     }
 
     // Update is called once per frame
-    void Update() {
-        if (Input.GetKey("r")) {
+    void Update()
+    {
+        if (Input.GetKey("r"))
+        {
             Timer += Time.deltaTime;
             if (Timer > 3) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
@@ -88,8 +93,12 @@ public class PlayerController : MonoBehaviour
         } else {
             rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);   
         }
-        if (Input.GetKeyDown("space")) {
-            rb.AddForce(Vector3.up * JumpThrust);
+        if (Input.GetKeyDown("space"))
+        {
+            if (CanJump)
+            {
+                rb.AddForce(Vector3.up * JumpThrust);
+            }
         }
     }
 }
